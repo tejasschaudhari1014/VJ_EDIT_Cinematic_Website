@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Place an Order | VJ EDIT{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow red">LET'S START YOUR PROJECT</p><h1>PLACE YOUR<br><em>ORDER.</em></h1><p class="muted">Share a few details. We'll review your request and confirm the quote with you.</p></section>
+<section class="order-layout section-pad">
+  <form class="order-form" method="post" enctype="multipart/form-data">
+    <div class="form-row"><label>Your name<input name="name" required placeholder="Enter your name"></label><label>Mobile / WhatsApp<input name="phone" required placeholder="+91"></label></div>
+    <div class="form-row"><label>Video category<select name="category" required><option value="">Select category</option>{% for c in ['Wedding','Pre-wedding','Birthday','Events','Instagram Reels','Travel','Other'] %}<option>{{ c }}</option>{% endfor %}</select></label><label>Package<select name="package"><option value="">Not sure yet</option><option>Basic</option><option>Standard</option><option>Premium</option></select></label></div>
+    <label>Event date (optional)<input type="date" name="event_date"></label>
+    <label>Tell us what you need<textarea name="details" rows="5" placeholder="Video duration, preferred style, deadline, music, references..."></textarea></label>
+    <label>Upload reference video / image (optional)<input type="file" name="reference_file" accept=".mp4,.mov,.mkv,.avi,.jpg,.jpeg,.png"><small>Max 500 MB. For large original footage, use a cloud drive link in the details field.</small></label>
+    <button class="btn btn-light submit-btn" type="submit">Submit Order Request ↗</button>
+  </form>
+  <aside class="order-aside"><p class="eyebrow red">PREFER INSTAGRAM?</p><h2>DM US<br>DIRECTLY.</h2><p class="muted">Send your video type, requirements and reference files to our Instagram account. We'll reply with availability and a quote.</p><a class="btn btn-instagram" href="{{ instagram_url }}" target="_blank" rel="noopener">◎ Open @ _vj_505</a><p class="tiny">Submitting this form sends an enquiry to VJ EDIT. Your order is confirmed only after we contact you.</p></aside>
+</section>
+{% endblock %}

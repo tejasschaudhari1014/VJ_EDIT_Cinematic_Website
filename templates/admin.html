@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Orders Dashboard | VJ EDIT{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow red">VJ EDIT / ADMIN</p><h1>ORDER<br><em>DASHBOARD.</em></h1><p class="muted">Demo dashboard — protect this page with admin login before public deployment.</p></section>
+<section class="section-pad">
+  <div class="table-wrap"><table><thead><tr><th>ID</th><th>Customer</th><th>Contact</th><th>Category / Package</th><th>Details</th><th>File</th><th>Status</th><th>Update</th></tr></thead><tbody>
+  {% for o in orders %}<tr><td>#{{ o.id }}<br><small>{{ o.created_at }}</small></td><td>{{ o.name }}</td><td>{{ o.phone }}</td><td>{{ o.category }}<br>{{ o.package or '—' }}</td><td>{{ o.details or '—' }}</td><td>{% if o.file_name %}<a href="{{ url_for('static', filename='uploads/' + o.file_name) }}" target="_blank">View file</a>{% else %}—{% endif %}</td><td>{{ o.status }}</td><td><form method="post" action="{{ url_for('update_status', order_id=o.id) }}"><select name="status"><option {% if o.status=='New' %}selected{% endif %}>New</option><option {% if o.status=='Processing' %}selected{% endif %}>Processing</option><option {% if o.status=='Completed' %}selected{% endif %}>Completed</option><option {% if o.status=='Cancelled' %}selected{% endif %}>Cancelled</option></select><button class="mini-btn">Save</button></form></td></tr>
+  {% else %}<tr><td colspan="8">No orders received yet.</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+{% endblock %}

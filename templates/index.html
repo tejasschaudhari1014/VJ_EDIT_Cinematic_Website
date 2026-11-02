@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-content">
+    <p class="eyebrow">CINEMATIC VIDEO EDITING STUDIO</p>
+    <h1>WHERE MOMENTS<br>MEET <em>EMOTION.</em></h1>
+    <p class="hero-copy">We craft cinematic experiences through powerful storytelling, creative edits and stunning visuals.</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="{{ url_for('order') }}">Place an Order <span>↗</span></a>
+      <a class="text-link" href="#work">Explore Projects ↓</a>
+    </div>
+  </div>
+  <div class="hero-side"><span>VJ EDIT / 2026</span><b>MAKE IT<br>UNFORGETTABLE.</b></div>
+  <div class="hero-bottom"><span>WEDDINGS · EVENTS · REELS · TRAVEL</span><span>SCROLL TO EXPLORE ↓</span></div>
+</section>
+
+<section class="intro section-pad">
+  <p class="eyebrow red">OUR CREATIVE APPROACH</p>
+  <h2>CREATIVE EDITS FOR<br>YOUR <span>BEST MOMENTS.</span></h2>
+  <p class="muted">From a once-in-a-lifetime wedding to a 15-second reel, every frame deserves attention.</p>
+</section>
+
+<section id="services" class="section-pad services">
+  <div class="section-heading"><div><p class="eyebrow red">WHAT WE CREATE</p><h2>OUR SERVICES</h2></div><a class="text-link" href="{{ url_for('order') }}">Start a project ↗</a></div>
+  <div class="service-grid">
+    <article class="service-card wedding"><div><small>01 / CELEBRATIONS</small><h3>Wedding<br>Films</h3></div><a href="{{ url_for('order') }}?category=Wedding">ORDER NOW ↗</a></article>
+    <article class="service-card reels"><div><small>02 / SOCIAL CONTENT</small><h3>Instagram<br>Reels</h3></div><a href="{{ url_for('order') }}?category=Instagram%20Reels">ORDER NOW ↗</a></article>
+    <article class="service-card events"><div><small>03 / LIVE MOMENTS</small><h3>Events &<br>Birthdays</h3></div><a href="{{ url_for('order') }}?category=Events">ORDER NOW ↗</a></article>
+    <article class="service-card travel"><div><small>04 / ADVENTURE</small><h3>Travel<br>Edits</h3></div><a href="{{ url_for('order') }}?category=Travel">ORDER NOW ↗</a></article>
+  </div>
+</section>
+
+<section id="work" class="section-pad work">
+  <div class="section-heading"><div><p class="eyebrow red">SELECTED VISUALS</p><h2>CINEMATIC WORKS</h2></div><span class="muted">YOUR STORY. OUR FRAME.</span></div>
+  <div class="work-grid">
+    <div class="work-tile tile-one"><span>01 / WEDDING FILM</span></div>
+    <div class="work-tile tile-two"><span>02 / EVENT HIGHLIGHT</span></div>
+    <div class="work-tile tile-three"><span>03 / SOCIAL REEL</span></div>
+  </div>
+  <p class="note">Replace these sample visual panels with your own edited video thumbnails and portfolio links.</p>
+</section>
+
+<section id="pricing" class="section-pad pricing">
+  <p class="eyebrow red">SIMPLE PACKAGES</p><h2>CHOOSE YOUR <span>EDIT.</span></h2>
+  <div class="price-grid">
+    <article class="price-card"><p class="eyebrow">01 / STARTER</p><h3>Basic</h3><p class="price">Custom quote</p><p>Short-form edit · Music sync · Basic colour correction</p><a class="btn btn-outline" href="{{ url_for('order') }}?package=Basic">Book Basic ↗</a></article>
+    <article class="price-card featured"><p class="eyebrow">02 / MOST POPULAR</p><h3>Standard</h3><p class="price">Custom quote</p><p>Advanced transitions · Colour grading · Sound design</p><a class="btn btn-light" href="{{ url_for('order') }}?package=Standard">Book Standard ↗</a></article>
+    <article class="price-card"><p class="eyebrow">03 / SIGNATURE</p><h3>Premium</h3><p class="price">Custom quote</p><p>Story-driven edit · Advanced effects · Priority delivery</p><a class="btn btn-outline" href="{{ url_for('order') }}?package=Premium">Book Premium ↗</a></article>
+  </div>
+  <p class="note">Final pricing depends on video duration, footage and editing requirements. Confirm the quote before payment.</p>
+</section>
+
+<section id="contact" class="cta section-pad">
+  <p class="eyebrow">HAVE A STORY TO TELL?</p><h2>LET'S MAKE IT<br><em>CINEMATIC.</em></h2>
+  <div class="cta-actions"><a class="btn btn-light" href="{{ url_for('order') }}">Submit Order Request ↗</a><a class="btn btn-instagram" href="{{ instagram_url }}" target="_blank" rel="noopener">◎ Order on Instagram</a></div>
+  <p class="muted">Prefer Instagram? Visit @_vj_505 and send a direct message to discuss your order.</p>
+</section>
+{% endblock %}

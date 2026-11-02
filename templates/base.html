@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}VJ EDIT | Cinematic Studio{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="nav-wrap">
+  <a class="brand" href="{{ url_for('home') }}"><span>VJ</span> EDIT<span class="brand-dot">.</span></a>
+  <nav>
+    <a href="{{ url_for('home') }}#work">Projects</a>
+    <a href="{{ url_for('home') }}#services">Services</a>
+    <a href="{{ url_for('home') }}#pricing">Pricing</a>
+    <a href="{{ url_for('home') }}#contact">Contact</a>
+    <a class="nav-ig" href="{{ instagram_url }}" target="_blank" rel="noopener">Instagram ↗</a>
+  </nav>
+</header>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}<div class="flash-wrap">{% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+<footer class="footer">
+  <a class="brand" href="{{ url_for('home') }}"><span>VJ</span> EDIT<span class="brand-dot">.</span></a>
+  <p>Turning moments into cinematic memories.</p>
+  <a href="{{ instagram_url }}" target="_blank" rel="noopener">@_vj_505 on Instagram ↗</a>
+  <small>© 2026 VJ EDIT. All rights reserved.</small>
+</footer>
+</body>
+</html>
